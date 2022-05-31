@@ -2,7 +2,7 @@ if not game:IsLoaded() then
     repeat wait() until game:IsLoaded()
 end
 
-local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
 local w = library:CreateWindow("Smash Legends") -- Creates the window
 
