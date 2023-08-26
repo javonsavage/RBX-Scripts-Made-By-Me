@@ -1,0 +1,907 @@
+main = function(...)
+    1.   PREPVARARGS     0                       
+    2.   GETIMPORT       0 1 [aux]               var0 = require
+    4.   GETIMPORT       2 3 [aux]               var2 = game
+    6.   LOADK           4 4                     var4 = "ReplicatedStorage"
+    7.   NAMECALL        2 2 22 [aux]            
+    9.   CALL            2 3 2                   var2 = var2:GetService(var4)
+    10.   GETTABLEKS      1 2 87 [aux]            var1 = var2["import"]
+    12.   CALL            0 2 2                   var0 = var0(var1)
+    13.   MOVE            1 0                     var1 = var0
+    14.   LOADK           2 7                     var2 = "shared/services"
+    15.   CALL            1 2 2                   var1 = var1(var2)
+    16.   MOVE            2 0                     var2 = var0
+    17.   LOADK           3 8                     var3 = "shared/sounds"
+    18.   CALL            2 2 2                   var2 = var2(var3)
+    19.   MOVE            3 0                     var3 = var0
+    20.   LOADK           4 9                     var4 = "remotes"
+    21.   CALL            3 2 2                   var3 = var3(var4)
+    22.   GETTABLEKS      5 1 202 [aux]           var5 = var1["Workspace"]
+    24.   GETTABLEKS      4 5 72 [aux]            var4 = var5["CurrentCamera"]
+    26.   GETTABLEKS      6 1 80 [aux]            var6 = var1["Players"]
+    28.   GETTABLEKS      5 6 49 [aux]            var5 = var6["LocalPlayer"]
+    30.   LOADNIL         6                       var6 = nil
+    31.   LOADNIL         7                       var7 = nil
+    32.   LOADNIL         8                       var8 = nil
+    33.   LOADNIL         9                       var9 = nil
+    34.   LOADNIL         10                      var10 = nil
+    35.   GETIMPORT       11 16 [aux]             var11 = CFrame["new"]
+    37.   CALL            11 1 2                  var11 = var11()
+    38.   FASTCALL        54 2                    FASTCALL[id=54]()
+    39.   GETIMPORT       12 18 [aux]             var12 = Vector3["new"]
+    41.   CALL            12 1 2                  var12 = var12()
+    42.   NEWTABLE        13 0 [aux]              var13 = {}
+    44.   LOADNIL         14                      var14 = nil
+    45.   LOADN           15 0                    var15 = 0
+    46.   GETIMPORT       16 16 [aux]             var16 = CFrame["new"]
+    48.   CALL            16 1 2                  var16 = var16()
+    49.   LOADN           17 0                    var17 = 0
+    50.   LOADNIL         18                      var18 = nil
+    51.   DUPCLOSURE      19 19                   
+    Lerp = function(arg0, arg1, arg2)
+        local var0 = arg0
+        local var1 = arg1
+        local var2 = arg2
+        1.   SUB             5 1 0                   var5 = var1 - var0
+        2.   MUL             4 5 2                   var4 = var5 * var2
+        3.   ADD             3 0 4                   var3 = var0 + var4
+    end
+    var19 = Lerp
+    52.   NEWCLOSURE      20 1                    
+    -- V nested upvalues[0] = var6
+    -- V nested upvalues[1] = var9
+    -- V nested upvalues[2] = var10
+    -- V nested upvalues[3] = var15
+    -- V nested upvalues[4] = var13
+    -- V nested upvalues[5] = var2
+    -- V nested upvalues[6] = var14
+    -- V nested upvalues[7] = var7
+    -- V nested upvalues[8] = var3
+    Attack = function(arg0, arg1)
+        local var0 = arg0
+        local var1 = arg1
+        1.   GETIMPORT       2 3 [aux]               var2 = Enum["UserInputState"]["Begin"]
+        3.   JUMPIFEQ        1 3 [aux]               goto #6 if var1 == var2
+        5.   RETURN          0 1                     
+        6.   GETUPVAL        2 0                     var2 = upvalues[0] -- referenced by #3
+        7.   JUMPIF          2 2                     goto #9 if var2
+        8.   RETURN          0 1                     
+        9.   GETUPVAL        3 1                     var3 = upvalues[1] -- referenced by #7
+        10.   GETTABLEKS      2 3 236 [aux]           var2 = var3["Value"]
+        12.   JUMPIF          2 5                     goto #17 if var2
+        13.   GETUPVAL        3 2                     var3 = upvalues[2]
+        14.   GETTABLEKS      2 3 236 [aux]           var2 = var3["Value"]
+        16.   JUMPIFNOT       2 2                     goto #18 if not var2
+        17.   RETURN          0 1                      -- referenced by #12
+        18.   GETIMPORT       3 6 [aux]               var3 = tick -- referenced by #16
+        20.   CALL            3 1 2                   var3 = var3()
+        21.   GETUPVAL        4 3                     var4 = upvalues[3]
+        22.   SUB             2 3 4                   var2 = var3 - var4
+        23.   LOADK           3 7                     var3 = 0.3
+        24.   JUMPIFNOTLT     2 3 [aux]               goto #27 if var2 >= var3
+        26.   RETURN          0 1                     
+        27.   GETIMPORT       2 6 [aux]               var2 = tick -- referenced by #24
+        29.   CALL            2 1 2                   var2 = var2()
+        30.   SETUPVAL        2 3                     upvalues[3] = var2
+        31.   GETUPVAL        3 4                     var3 = upvalues[4]
+        32.   LOADK           5 8                     var5 = "attack"
+        33.   GETIMPORT       7 11 [aux]              var7 = math["random"]
+        35.   LOADN           8 5                     var8 = 5
+        36.   CALL            7 2 0                   var7, ... = var7(var8)
+        37.   FASTCALL        63 2                    FASTCALL[id=63]()
+        38.   GETIMPORT       6 13 [aux]              var6 = tostring
+        40.   CALL            6 0 2                   var6 = var6(var7, ...)
+        41.   CONCAT          4 5 6                   var4 = var5 .. var6
+        42.   GETTABLE        2 3 4                   var2 = var3[var4]
+        43.   NAMECALL        3 2 238 [aux]           
+        45.   CALL            3 2 1                   var2:Play()
+        46.   GETUPVAL        3 0                     var3 = upvalues[0]
+        47.   LOADK           5 15                    var5 = "weapon_effect"
+        48.   NAMECALL        3 3 3 [aux]             
+        50.   CALL            3 3 2                   var3 = var3:FindFirstChild(var5)
+        51.   GETUPVAL        4 0                     var4 = upvalues[0]
+        52.   LOADK           6 17                    var6 = "weapon_model"
+        53.   NAMECALL        4 4 3 [aux]             
+        55.   CALL            4 3 2                   var4 = var4:FindFirstChild(var6)
+        56.   GETUPVAL        5 5                     var5 = upvalues[5]
+        57.   GETUPVAL        8 6                     var8 = upvalues[6]
+        58.   GETTABLEKS      7 8 1 [aux]             var7 = var8["swing"]
+        60.   GETUPVAL        8 7                     var8 = upvalues[7]
+        61.   LOADK           9 19                    var9 = 0.2
+        62.   NAMECALL        5 5 238 [aux]           
+        64.   CALL            5 5 1                   var5:Play(var7, var8, var9)
+        65.   GETUPVAL        5 6                     var5 = upvalues[6]
+        66.   LOADK           7 20                    var7 = "swing_alt"
+        67.   NAMECALL        5 5 3 [aux]             
+        69.   CALL            5 3 2                   var5 = var5:FindFirstChild(var7)
+        70.   JUMPIFNOT       5 10                    goto #80 if not var5
+        71.   GETUPVAL        5 5                     var5 = upvalues[5]
+        72.   GETUPVAL        8 6                     var8 = upvalues[6]
+        73.   GETTABLEKS      7 8 205 [aux]           var7 = var8["swing_alt"]
+        75.   GETUPVAL        8 7                     var8 = upvalues[7]
+        76.   LOADK           9 19                    var9 = 0.2
+        77.   NAMECALL        5 5 238 [aux]           
+        79.   CALL            5 5 1                   var5:Play(var7, var8, var9)
+        80.   JUMPIFNOT       3 11                    goto #91 if not var3 -- referenced by #70
+        81.   JUMPIFNOT       4 10                    goto #91 if not var4
+        82.   GETIMPORT       5 23 [aux]              var5 = coroutine["resume"]
+        84.   GETIMPORT       6 25 [aux]              var6 = coroutine["create"]
+        86.   NEWCLOSURE      7 0                     
+        -- V nested upvalues[0] = var3
+        -- V nested upvalues[1] = var4
+        var7 = function()
+            1.   GETIMPORT       0 1 [aux]               var0 = require
+            3.   GETUPVAL        1 0                     var1 = upvalues[0]
+            4.   CALL            0 2 2                   var0 = var0(var1)
+            5.   GETUPVAL        1 1                     var1 = upvalues[1]
+            6.   CALL            0 2 1                   var0(var1)
+        end
+
+        89.   CALL            6 2 0                   var6, ... = var6(var7)
+        90.   CALL            5 0 1                   var5(var6, ...)
+        91.   GETUPVAL        6 8                     var6 = upvalues[8] -- referenced by #80, #81
+        92.   GETTABLEKS      5 6 223 [aux]           var5 = var6["attack"]
+        94.   NAMECALL        5 5 107 [aux]           
+        96.   CALL            5 2 1                   var5:FireServer()
+    end
+    var20 = Attack
+    62.   NEWCLOSURE      21 2                    
+    -- V nested upvalues[0] = var6
+    -- V nested upvalues[1] = var10
+    -- V nested upvalues[2] = var3
+    Block = function(arg0, arg1)
+        local var0 = arg0
+        local var1 = arg1
+        1.   GETUPVAL        2 0                     var2 = upvalues[0]
+        2.   JUMPIF          2 2                     goto #4 if var2
+        3.   RETURN          0 1                     
+        4.   GETIMPORT       2 3 [aux]               var2 = Enum["UserInputState"]["Begin"] -- referenced by #2
+        6.   JUMPIFNOTEQ     1 14 [aux]              goto #20 if var1 ~= var2
+        8.   GETUPVAL        2 1                     var2 = upvalues[1]
+        9.   LOADB           3 1 0                   var3 = true
+        10.   SETTABLEKS      3 2 236 [aux]           var2["Value"] = var3
+        12.   GETUPVAL        3 2                     var3 = upvalues[2]
+        13.   GETTABLEKS      2 3 141 [aux]           var2 = var3["block"]
+        15.   LOADB           4 1 0                   var4 = true
+        16.   NAMECALL        2 2 107 [aux]           
+        18.   CALL            2 3 1                   var2:FireServer(var4)
+        19.   RETURN          0 1                     
+        20.   GETIMPORT       2 8 [aux]               var2 = Enum["UserInputState"]["End"] -- referenced by #6
+        22.   JUMPIFNOTEQ     1 13 [aux]              goto #35 if var1 ~= var2
+        24.   GETUPVAL        2 1                     var2 = upvalues[1]
+        25.   LOADB           3 0 0                   var3 = false
+        26.   SETTABLEKS      3 2 236 [aux]           var2["Value"] = var3
+        28.   GETUPVAL        3 2                     var3 = upvalues[2]
+        29.   GETTABLEKS      2 3 141 [aux]           var2 = var3["block"]
+        31.   LOADB           4 0 0                   var4 = false
+        32.   NAMECALL        2 2 107 [aux]           
+        34.   CALL            2 3 1                   var2:FireServer(var4)
+    end
+    var21 = Block
+    66.   NEWCLOSURE      22 3                    
+    -- V nested upvalues[0] = var1
+    -- V nested upvalues[1] = var6
+    -- V nested upvalues[2] = var14
+    -- V nested upvalues[3] = var16
+    -- V nested upvalues[4] = var13
+    -- V nested upvalues[5] = var7
+    -- V nested upvalues[6] = var8
+    -- V nested upvalues[7] = var9
+    -- V nested upvalues[8] = var10
+    -- V nested upvalues[9] = var11
+    -- V nested upvalues[10] = var12
+    -- V nested upvalues[11] = var17
+    -- V nested upvalues[12] = var4
+    -- V nested upvalues[13] = var20
+    -- V nested upvalues[14] = var21
+    HandleCharacter = function(arg0)
+        local var0 = arg0
+        1.   JUMPIFNOT       0 181                   goto #182 if not var0
+        2.   GETTABLEKS      1 0 36 [aux]            var1 = var0["Parent"]
+        4.   JUMPIFNOT       1 178                   goto #182 if not var1
+        5.   GETUPVAL        2 0                     var2 = upvalues[0]
+        6.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+        8.   LOADK           3 2                     var3 = "Attack"
+        9.   NAMECALL        1 1 22 [aux]            
+        11.   CALL            1 3 1                   var1:UnbindAction(var3)
+        12.   GETUPVAL        2 0                     var2 = upvalues[0]
+        13.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+        15.   LOADK           3 4                     var3 = "Block"
+        16.   NAMECALL        1 1 22 [aux]            
+        18.   CALL            1 3 1                   var1:UnbindAction(var3)
+        19.   LOADNIL         1                       var1 = nil
+        20.   SETUPVAL        1 1                     upvalues[1] = var1
+        21.   LOADNIL         1                       var1 = nil
+        22.   SETUPVAL        1 2                     upvalues[2] = var1
+        23.   GETIMPORT       1 7 [aux]               var1 = CFrame["new"]
+        25.   CALL            1 1 2                   var1 = var1()
+        26.   SETUPVAL        1 3                     upvalues[3] = var1
+        27.   NEWTABLE        1 0 [aux]               var1 = {}
+        29.   SETUPVAL        1 4                     upvalues[4] = var1
+        30.   LOADK           3 8                     var3 = "HumanoidRootPart"
+        31.   NAMECALL        1 0 211 [aux]           
+        33.   CALL            1 3 2                   var1 = var0:WaitForChild(var3)
+        34.   SETUPVAL        1 5                     upvalues[5] = var1
+        35.   LOADK           3 10                    var3 = "Humanoid"
+        36.   NAMECALL        1 0 211 [aux]           
+        38.   CALL            1 3 2                   var1 = var0:WaitForChild(var3)
+        39.   SETUPVAL        1 6                     upvalues[6] = var1
+        40.   LOADK           3 11                    var3 = "fight_sounds"
+        41.   NAMECALL        1 0 211 [aux]           
+        43.   CALL            1 3 2                   var1 = var0:WaitForChild(var3)
+        44.   SETUPVAL        1 2                     upvalues[2] = var1
+        45.   LOADK           3 12                    var3 = "flailing"
+        46.   NAMECALL        1 0 211 [aux]           
+        48.   CALL            1 3 2                   var1 = var0:WaitForChild(var3)
+        49.   SETUPVAL        1 7                     upvalues[7] = var1
+        50.   LOADK           3 13                    var3 = "blocking"
+        51.   NAMECALL        1 0 211 [aux]           
+        53.   CALL            1 3 2                   var1 = var0:WaitForChild(var3)
+        54.   SETUPVAL        1 8                     upvalues[8] = var1
+        55.   GETUPVAL        2 5                     var2 = upvalues[5]
+        56.   GETTABLEKS      1 2 133 [aux]           var1 = var2["CFrame"]
+        58.   SETUPVAL        1 9                     upvalues[9] = var1
+        59.   GETUPVAL        2 5                     var2 = upvalues[5]
+        60.   GETTABLEKS      1 2 23 [aux]            var1 = var2["AssemblyLinearVelocity"]
+        62.   SETUPVAL        1 10                    upvalues[10] = var1
+        63.   LOADK           3 15                    var3 = "fight_animations"
+        64.   NAMECALL        1 0 211 [aux]           
+        66.   CALL            1 3 2                   var1 = var0:WaitForChild(var3)
+        67.   GETTABLEKS      2 1 107 [aux]           var2 = var1["ChildAdded"]
+        69.   NEWCLOSURE      4 0                     
+        -- V nested upvalues[0] = upvalues[4]
+        -- V nested upvalues[1] = upvalues[6]
+        var4 = function(arg0)
+            local var0 = arg0
+            1.   GETUPVAL        1 0                     var1 = upvalues[0]
+            2.   GETTABLEKS      2 0 186 [aux]           var2 = var0["Name"]
+            4.   GETUPVAL        3 1                     var3 = upvalues[1]
+            5.   MOVE            5 0                     var5 = var0
+            6.   NAMECALL        3 3 148 [aux]           
+            8.   CALL            3 3 2                   var3 = var3:LoadAnimation(var5)
+            9.   SETTABLE        3 1 2                   var1[var2] = var3
+            10.   GETTABLEKS      1 0 186 [aux]           var1 = var0["Name"]
+            12.   
+            13.   
+            14.   GETUPVAL        2 0                     var2 = upvalues[0]
+            15.   GETTABLEKS      3 0 186 [aux]           var3 = var0["Name"]
+            17.   GETTABLE        1 2 3                   var1 = var2[var3]
+            18.   NAMECALL        1 1 238 [aux]           
+            20.   CALL            1 2 1                   var1:Play()
+        end
+
+        72.   NAMECALL        2 2 199 [aux]           
+        74.   CALL            2 3 1                   var2:Connect(var4)
+        75.   GETIMPORT       2 19 [aux]              var2 = pairs
+        77.   NAMECALL        3 1 104 [aux]           
+        79.   CALL            3 2 0                   var3, ... = var1:GetChildren()
+        80.   CALL            2 0 4                   var2, var3, var4 = var2(var3, ...)
+        81.   PAIRSPREP                               pairsprep start - [escape at #92] -- var5 = key, var6 = value
+        82.   GETUPVAL        7 4                     var7 = upvalues[4]
+        83.   GETTABLEKS      8 6 186 [aux]           var8 = var6["Name"]
+        85.   GETUPVAL        9 6                     var9 = upvalues[6]
+        86.   MOVE            11 6                    var11 = var6
+        87.   NAMECALL        9 9 148 [aux]           
+        89.   CALL            9 3 2                   var9 = var9:LoadAnimation(var11)
+        90.   SETTABLE        9 7 8                   var7[var8] = var9
+        91.   TFORLOOP        2 65526 [aux]           gforloop - iterate + goto #93
+        93.   GETUPVAL        3 4                     var3 = upvalues[4]
+        94.   GETTABLEKS      2 3 242 [aux]           var2 = var3["idle"]
+        96.   JUMPIFNOT       2 7                     goto #103 if not var2
+        97.   GETUPVAL        3 4                     var3 = upvalues[4]
+        98.   GETTABLEKS      2 3 242 [aux]           var2 = var3["idle"]
+        100.   NAMECALL        2 2 238 [aux]           
+        102.   CALL            2 2 1                   var2:Play()
+        103.   GETUPVAL        3 6                     var3 = upvalues[6] -- referenced by #96
+        104.   GETTABLEKS      2 3 90 [aux]            var2 = var3["Health"]
+        106.   GETUPVAL        4 6                     var4 = upvalues[6]
+        107.   GETTABLEKS      3 4 234 [aux]           var3 = var4["HealthChanged"]
+        109.   NEWCLOSURE      5 1                     
+        -- V nested upvalues[0] = var2
+        -- V nested upvalues[1] = upvalues[11]
+        var5 = function(arg0)
+            local var0 = arg0
+            1.   GETUPVAL        2 0                     var2 = upvalues[0]
+            2.   SUB             1 0 2                   var1 = var0 - var2
+            3.   LOADN           2 0                     var2 = 0
+            4.   JUMPIFNOTLT     1 5 [aux]               goto #9 if var1 >= var2
+            6.   GETUPVAL        3 1                     var3 = upvalues[1]
+            7.   SUB             2 3 1                   var2 = var3 - var1
+            8.   SETUPVAL        2 1                     upvalues[1] = var2
+            9.   SETUPVAL        0 0                     upvalues[0] = var0 -- referenced by #4
+        end
+
+        112.   NAMECALL        3 3 199 [aux]           
+        114.   CALL            3 3 1                   var3:Connect(var5)
+        115.   GETUPVAL        4 6                     var4 = upvalues[6]
+        116.   GETTABLEKS      3 4 199 [aux]           var3 = var4["Died"]
+        118.   NEWCLOSURE      5 2                     
+        -- V nested upvalues[0] = upvalues[4]
+        var5 = function()
+            1.   GETUPVAL        1 0                     var1 = upvalues[0]
+            2.   GETTABLEKS      0 1 215 [aux]           var0 = var1["flail"]
+            4.   LOADN           2 2                     var2 = 2
+            5.   NAMECALL        0 0 223 [aux]           
+            7.   CALL            0 3 1                   var0:AdjustSpeed(var2)
+        end
+
+        120.   NAMECALL        3 3 199 [aux]           
+        122.   CALL            3 3 1                   var3:Connect(var5)
+        123.   GETUPVAL        4 7                     var4 = upvalues[7]
+        124.   GETTABLEKS      3 4 133 [aux]           var3 = var4["Changed"]
+        126.   NEWCLOSURE      5 3                     
+        -- V nested upvalues[0] = upvalues[7]
+        -- V nested upvalues[1] = upvalues[4]
+        -- V nested upvalues[2] = upvalues[6]
+        -- V nested upvalues[3] = upvalues[5]
+        var5 = function()
+            1.   GETUPVAL        1 0                     var1 = upvalues[0]
+            2.   GETTABLEKS      0 1 236 [aux]           var0 = var1["Value"]
+            4.   JUMPIFNOT       0 36                    goto #40 if not var0
+            5.   GETUPVAL        1 1                     var1 = upvalues[1]
+            6.   GETTABLEKS      0 1 215 [aux]           var0 = var1["flail"]
+            8.   NAMECALL        0 0 238 [aux]           
+            10.   CALL            0 2 1                   var0:Play()
+            11.   GETUPVAL        0 2                     var0 = upvalues[2]
+            12.   GETIMPORT       2 6 [aux]               var2 = Enum["HumanoidStateType"]["Physics"]
+            14.   NAMECALL        0 0 33 [aux]            
+            16.   CALL            0 3 1                   var0:ChangeState(var2)
+            17.   GETUPVAL        0 3                     var0 = upvalues[3]
+            18.   GETIMPORT       2 10 [aux]              var2 = math["random"]
+            20.   LOADN           3 65506                 var3 = 65506
+            21.   LOADN           4 30                    var4 = 30
+            22.   CALL            2 3 2                   var2 = var2(var3, var4)
+            23.   GETIMPORT       3 10 [aux]              var3 = math["random"]
+            25.   LOADN           4 65506                 var4 = 65506
+            26.   LOADN           5 30                    var5 = 30
+            27.   CALL            3 3 2                   var3 = var3(var4, var5)
+            28.   GETIMPORT       4 10 [aux]              var4 = math["random"]
+            30.   LOADN           5 65506                 var5 = 65506
+            31.   LOADN           6 30                    var6 = 30
+            32.   CALL            4 3 0                   var4, ... = var4(var5, var6)
+            33.   FASTCALL        54 2                    FASTCALL[id=54]()
+            34.   GETIMPORT       1 13 [aux]              var1 = Vector3["new"]
+            36.   CALL            1 0 2                   var1 = var1(var2, ...)
+            37.   SETTABLEKS      1 0 170 [aux]           var0["RotVelocity"] = var1
+            39.   RETURN          0 1                     
+            40.   GETUPVAL        1 1                     var1 = upvalues[1] -- referenced by #4
+            41.   GETTABLEKS      0 1 215 [aux]           var0 = var1["flail"]
+            43.   NAMECALL        0 0 250 [aux]           
+            45.   CALL            0 2 1                   var0:Stop()
+            46.   GETUPVAL        0 2                     var0 = upvalues[2]
+            47.   GETIMPORT       2 17 [aux]              var2 = Enum["HumanoidStateType"]["GettingUp"]
+            49.   NAMECALL        0 0 33 [aux]            
+            51.   CALL            0 3 1                   var0:ChangeState(var2)
+        end
+
+        131.   NAMECALL        3 3 199 [aux]           
+        133.   CALL            3 3 1                   var3:Connect(var5)
+        134.   GETUPVAL        4 8                     var4 = upvalues[8]
+        135.   GETTABLEKS      3 4 133 [aux]           var3 = var4["Changed"]
+        137.   NEWCLOSURE      5 4                     
+        -- V nested upvalues[0] = upvalues[8]
+        -- V nested upvalues[1] = upvalues[4]
+        var5 = function()
+            1.   GETUPVAL        1 0                     var1 = upvalues[0]
+            2.   GETTABLEKS      0 1 236 [aux]           var0 = var1["Value"]
+            4.   JUMPIFNOT       0 8                     goto #12 if not var0
+            5.   GETUPVAL        1 1                     var1 = upvalues[1]
+            6.   GETTABLEKS      0 1 141 [aux]           var0 = var1["block"]
+            8.   NAMECALL        0 0 238 [aux]           
+            10.   CALL            0 2 1                   var0:Play()
+            11.   RETURN          0 1                     
+            12.   GETUPVAL        1 1                     var1 = upvalues[1] -- referenced by #4
+            13.   GETTABLEKS      0 1 141 [aux]           var0 = var1["block"]
+            15.   NAMECALL        0 0 250 [aux]           
+            17.   CALL            0 2 1                   var0:Stop()
+        end
+
+        140.   NAMECALL        3 3 199 [aux]           
+        142.   CALL            3 3 1                   var3:Connect(var5)
+        143.   SETUPVAL        0 1                     upvalues[1] = var0
+        144.   GETUPVAL        3 12                    var3 = upvalues[12]
+        145.   GETUPVAL        4 6                     var4 = upvalues[6]
+        146.   SETTABLEKS      4 3 156 [aux]           var3["CameraSubject"] = var4
+        148.   LOADB           3 0 0                   var3 = false
+        149.   NEWCLOSURE      4 5                     
+        -- V nested upvalues[0] = var3
+        -- V nested upvalues[1] = upvalues[0]
+        -- V nested upvalues[2] = upvalues[13]
+        -- V nested upvalues[3] = upvalues[14]
+        UpdateBinding = function(arg0)
+            local var0 = arg0
+            1.   GETUPVAL        1 0                     var1 = upvalues[0]
+            2.   JUMPIFEQ        1 3 [aux]               goto #5 if var1 == var0
+            4.   SETUPVAL        0 0                     upvalues[0] = var0
+            5.   GETUPVAL        1 0                     var1 = upvalues[0] -- referenced by #2
+            6.   JUMPIFNOT       1 68                    goto #74 if not var1
+            7.   GETUPVAL        2 1                     var2 = upvalues[1]
+            8.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            10.   LOADK           3 1                     var3 = "Attack"
+            11.   GETUPVAL        4 2                     var4 = upvalues[2]
+            12.   LOADB           5 1 0                   var5 = true
+            13.   GETIMPORT       6 5 [aux]               var6 = Enum["UserInputType"]["MouseButton1"]
+            15.   GETIMPORT       7 8 [aux]               var7 = Enum["KeyCode"]["ButtonX"]
+            17.   NAMECALL        1 1 181 [aux]           
+            19.   CALL            1 7 1                   var1:BindAction(var3, var4, var5, var6, var7)
+            20.   GETUPVAL        2 1                     var2 = upvalues[1]
+            21.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            23.   LOADK           3 10                    var3 = "Block"
+            24.   GETUPVAL        4 3                     var4 = upvalues[3]
+            25.   LOADB           5 1 0                   var5 = true
+            26.   GETIMPORT       6 12 [aux]              var6 = Enum["KeyCode"]["LeftShift"]
+            28.   GETIMPORT       7 14 [aux]              var7 = Enum["KeyCode"]["ButtonB"]
+            30.   NAMECALL        1 1 181 [aux]           
+            32.   CALL            1 7 1                   var1:BindAction(var3, var4, var5, var6, var7)
+            33.   GETUPVAL        2 1                     var2 = upvalues[1]
+            34.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            36.   LOADK           3 1                     var3 = "Attack"
+            37.   LOADK           4 1                     var4 = "Attack"
+            38.   NAMECALL        1 1 158 [aux]           
+            40.   CALL            1 4 1                   var1:SetTitle(var3, var4)
+            41.   GETUPVAL        2 1                     var2 = upvalues[1]
+            42.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            44.   LOADK           3 10                    var3 = "Block"
+            45.   LOADK           4 10                    var4 = "Block"
+            46.   NAMECALL        1 1 158 [aux]           
+            48.   CALL            1 4 1                   var1:SetTitle(var3, var4)
+            49.   GETUPVAL        2 1                     var2 = upvalues[1]
+            50.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            52.   LOADK           3 1                     var3 = "Attack"
+            53.   GETIMPORT       4 18 [aux]              var4 = UDim2["fromScale"]
+            55.   LOADK           5 19                    var5 = 0.5
+            56.   LOADN           6 0                     var6 = 0
+            57.   CALL            4 3 0                   var4, ... = var4(var5, var6)
+            58.   NAMECALL        1 1 232 [aux]           
+            60.   CALL            1 0 1                   var1:SetPosition(var2, ...)
+            61.   GETUPVAL        2 1                     var2 = upvalues[1]
+            62.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            64.   LOADK           3 10                    var3 = "Block"
+            65.   GETIMPORT       4 18 [aux]              var4 = UDim2["fromScale"]
+            67.   LOADN           5 0                     var5 = 0
+            68.   LOADN           6 0                     var6 = 0
+            69.   CALL            4 3 0                   var4, ... = var4(var5, var6)
+            70.   NAMECALL        1 1 232 [aux]           
+            72.   CALL            1 0 1                   var1:SetPosition(var2, ...)
+            73.   RETURN          0 1                     
+            74.   GETUPVAL        2 1                     var2 = upvalues[1] -- referenced by #6
+            75.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            77.   LOADK           3 1                     var3 = "Attack"
+            78.   NAMECALL        1 1 22 [aux]            
+            80.   CALL            1 3 1                   var1:UnbindAction(var3)
+            81.   GETUPVAL        2 1                     var2 = upvalues[1]
+            82.   GETTABLEKS      1 2 251 [aux]           var1 = var2["ContextActionService"]
+            84.   LOADK           3 10                    var3 = "Block"
+            85.   NAMECALL        1 1 22 [aux]            
+            87.   CALL            1 3 1                   var1:UnbindAction(var3)
+        end
+        var4 = UpdateBinding
+        154.   GETUPVAL        6 1                     var6 = upvalues[1]
+        155.   GETTABLEKS      5 6 107 [aux]           var5 = var6["ChildAdded"]
+        157.   NEWCLOSURE      7 6                     
+        -- V nested upvalues[0] = var4
+        var7 = function(arg0)
+            local var0 = arg0
+            1.   LOADK           3 0                     var3 = "Tool"
+            2.   NAMECALL        1 0 254 [aux]           
+            4.   CALL            1 3 2                   var1 = var0:IsA(var3)
+            5.   JUMPIFNOT       1 4                     goto #9 if not var1
+            6.   GETUPVAL        1 0                     var1 = upvalues[0]
+            7.   LOADB           2 0 0                   var2 = false
+            8.   CALL            1 2 1                   var1(var2)
+        end
+
+        159.   NAMECALL        5 5 199 [aux]           
+        161.   CALL            5 3 1                   var5:Connect(var7)
+        162.   GETUPVAL        6 1                     var6 = upvalues[1]
+        163.   GETTABLEKS      5 6 189 [aux]           var5 = var6["ChildRemoved"]
+        165.   NEWCLOSURE      7 7                     
+        -- V nested upvalues[0] = var4
+        var7 = function(arg0)
+            local var0 = arg0
+            1.   LOADK           3 0                     var3 = "Tool"
+            2.   NAMECALL        1 0 254 [aux]           
+            4.   CALL            1 3 2                   var1 = var0:IsA(var3)
+            5.   JUMPIFNOT       1 4                     goto #9 if not var1
+            6.   GETUPVAL        1 0                     var1 = upvalues[0]
+            7.   LOADB           2 1 0                   var2 = true
+            8.   CALL            1 2 1                   var1(var2)
+        end
+
+        167.   NAMECALL        5 5 199 [aux]           
+        169.   CALL            5 3 1                   var5:Connect(var7)
+        170.   MOVE            5 4                     var5 = var4
+        171.   GETUPVAL        7 1                     var7 = upvalues[1]
+        172.   LOADK           9 31                    var9 = "Tool"
+        173.   NAMECALL        7 7 184 [aux]           
+        175.   CALL            7 3 2                   var7 = var7:FindFirstChildOfClass(var9)
+        176.   
+        177.   NOP                                     
+        178.   LOADB           6 0 1                   var6 = false
+        179.   LOADB           6 1 0                   var6 = true
+        180.   CALL            5 2 1                   var5(var6)
+        181.   CLOSEUPVALS     2                       
+        182.   GETUPVAL        1 12                    var1 = upvalues[12] -- referenced by #1, #4
+        183.   GETIMPORT       2 36 [aux]              var2 = Enum["CameraType"]["Custom"]
+        185.   SETTABLEKS      2 1 42 [aux]            var1["CameraType"] = var2
+        187.   GETUPVAL        1 12                    var1 = upvalues[12]
+        188.   LOADN           2 70                    var2 = 70
+        189.   SETTABLEKS      2 1 97 [aux]            var1["FieldOfView"] = var2
+        191.   GETUPVAL        1 12                    var1 = upvalues[12]
+        192.   GETIMPORT       2 7 [aux]               var2 = CFrame["new"]
+        194.   CALL            2 1 2                   var2 = var2()
+        195.   SETTABLEKS      2 1 133 [aux]           var1["CFrame"] = var2
+    end
+    var22 = HandleCharacter
+    82.   DUPCLOSURE      23 20                   
+    -- V nested upvalues[0] = var1
+    -- V nested upvalues[1] = var5
+    ClosestTarget = function(arg0)
+        local var0 = arg0
+        1.   LOADNIL         1                       var1 = nil
+        2.   LOADNIL         2                       var2 = nil
+        3.   GETIMPORT       3 1 [aux]               var3 = pairs
+        5.   GETUPVAL        5 0                     var5 = upvalues[0]
+        6.   GETTABLEKS      4 5 80 [aux]            var4 = var5["Players"]
+        8.   NAMECALL        4 4 171 [aux]           
+        10.   CALL            4 2 0                   var4, ... = var4:GetPlayers()
+        11.   CALL            3 0 4                   var3, var4, var5 = var3(var4, ...)
+        12.   PAIRSPREP                               pairsprep start - [escape at #46] -- var6 = key, var7 = value
+        13.   GETUPVAL        8 1                     var8 = upvalues[1]
+        14.   JUMPIFEQ        7 31 [aux]              goto #45 if var7 == var8
+        16.   GETTABLEKS      8 7 105 [aux]           var8 = var7["Character"]
+        18.   JUMPIFNOT       8 27                    goto #45 if not var8
+        19.   GETTABLEKS      8 7 105 [aux]           var8 = var7["Character"]
+        21.   LOADK           10 5                    var10 = "HumanoidRootPart"
+        22.   NAMECALL        8 8 3 [aux]             
+        24.   CALL            8 3 2                   var8 = var8:FindFirstChild(var10)
+        25.   JUMPIFNOT       8 20                    goto #45 if not var8
+        26.   GETTABLEKS      12 7 105 [aux]          var12 = var7["Character"]
+        28.   GETTABLEKS      11 12 102 [aux]         var11 = var12["HumanoidRootPart"]
+        30.   GETTABLEKS      10 11 59 [aux]          var10 = var11["Position"]
+        32.   SUB             9 0 10                  var9 = var0 - var10
+        33.   GETTABLEKS      8 9 170 [aux]           var8 = var9["Magnitude"]
+        35.   JUMPIFNOT       1 7                     goto #42 if not var1
+        36.   JUMPIFNOTLT     8 9 [aux]               goto #45 if var8 >= var2
+        38.   GETTABLEKS      1 7 105 [aux]           var1 = var7["Character"]
+        40.   MOVE            2 8                     var2 = var8
+        41.   JUMP            4                       goto #45
+        42.   GETTABLEKS      1 7 105 [aux]           var1 = var7["Character"] -- referenced by #35
+        44.   MOVE            2 8                     var2 = var8
+        45.   TFORLOOP        3 65503 [aux]           gforloop - iterate + goto #47 -- referenced by #14, #18, #25, #36, #41
+    end
+    var23 = ClosestTarget
+    85.   GETTABLEKS      25 1 90 [aux]           var25 = var1["RunService"]
+    87.   GETTABLEKS      24 25 253 [aux]         var24 = var25["Heartbeat"]
+    89.   NEWCLOSURE      26 5                    
+    -- V nested upvalues[0] = var6
+    -- V nested upvalues[1] = var7
+    -- V nested upvalues[2] = var11
+    -- V nested upvalues[3] = var12
+    -- V nested upvalues[4] = var23
+    -- V nested upvalues[5] = var9
+    -- V nested upvalues[6] = var5
+    -- V nested upvalues[7] = var8
+    -- V nested upvalues[8] = var16
+    -- V nested upvalues[9] = var10
+    var26 = function(arg0)
+        local var0 = arg0
+        1.   GETUPVAL        1 0                     var1 = upvalues[0]
+        2.   JUMPIFNOT       1 162                   goto #164 if not var1
+        3.   GETUPVAL        3 1                     var3 = upvalues[1]
+        4.   GETTABLEKS      2 3 80 [aux]            var2 = var3["AssemblyAngularVelocity"]
+        6.   GETTABLEKS      1 2 170 [aux]           var1 = var2["Magnitude"]
+        8.   LOADN           2 10000                 var2 = 10000
+        9.   JUMPIFNOTLT     2 9 [aux]               goto #18 if var2 >= var1
+        11.   GETUPVAL        1 1                     var1 = upvalues[1]
+        12.   FASTCALL        54 2                    FASTCALL[id=54]()
+        13.   GETIMPORT       2 4 [aux]               var2 = Vector3["new"]
+        15.   CALL            2 1 2                   var2 = var2()
+        16.   SETTABLEKS      2 1 80 [aux]            var1["AssemblyAngularVelocity"] = var2
+        18.   GETUPVAL        3 1                     var3 = upvalues[1] -- referenced by #9
+        19.   GETTABLEKS      2 3 23 [aux]            var2 = var3["AssemblyLinearVelocity"]
+        21.   GETTABLEKS      1 2 170 [aux]           var1 = var2["Magnitude"]
+        23.   LOADN           2 10000                 var2 = 10000
+        24.   JUMPIFNOTLT     2 11 [aux]              goto #35 if var2 >= var1
+        26.   GETUPVAL        1 1                     var1 = upvalues[1]
+        27.   GETUPVAL        2 2                     var2 = upvalues[2]
+        28.   SETTABLEKS      2 1 133 [aux]           var1["CFrame"] = var2
+        30.   GETUPVAL        1 1                     var1 = upvalues[1]
+        31.   GETUPVAL        2 3                     var2 = upvalues[3]
+        32.   SETTABLEKS      2 1 23 [aux]            var1["AssemblyLinearVelocity"] = var2
+        34.   JUMP            9                       goto #43
+        35.   GETUPVAL        2 1                     var2 = upvalues[1] -- referenced by #24
+        36.   GETTABLEKS      1 2 23 [aux]            var1 = var2["AssemblyLinearVelocity"]
+        38.   SETUPVAL        1 3                     upvalues[3] = var1
+        39.   GETUPVAL        2 1                     var2 = upvalues[1]
+        40.   GETTABLEKS      1 2 133 [aux]           var1 = var2["CFrame"]
+        42.   SETUPVAL        1 2                     upvalues[2] = var1
+        43.   GETUPVAL        1 4                     var1 = upvalues[4] -- referenced by #34
+        44.   GETUPVAL        3 1                     var3 = upvalues[1]
+        45.   GETTABLEKS      2 3 59 [aux]            var2 = var3["Position"]
+        47.   CALL            1 2 3                   var1, var2 = var1(var2)
+        48.   JUMPIFNOT       1 92                    goto #140 if not var1
+        49.   LOADN           3 30                    var3 = 30
+        50.   JUMPIFNOTLE     2 90 [aux]              goto #140 if var2 > var3
+        52.   GETUPVAL        4 5                     var4 = upvalues[5]
+        53.   GETTABLEKS      3 4 236 [aux]           var3 = var4["Value"]
+        55.   JUMPIF          3 85                    goto #140 if var3
+        56.   GETUPVAL        4 6                     var4 = upvalues[6]
+        57.   GETTABLEKS      3 4 219 [aux]           var3 = var4["TeamColor"]
+        59.   GETIMPORT       4 11 [aux]              var4 = BrickColor["new"]
+        61.   LOADK           5 12                    var5 = "White"
+        62.   CALL            4 2 2                   var4 = var4(var5)
+        63.   JUMPIFEQ        3 77 [aux]              goto #140 if var3 == var4
+        65.   GETUPVAL        3 7                     var3 = upvalues[7]
+        66.   LOADB           4 0 0                   var4 = false
+        67.   SETTABLEKS      4 3 2 [aux]             var3["AutoRotate"] = var4
+        69.   GETTABLEKS      3 1 155 [aux]           var3 = var1["PrimaryPart"]
+        71.   GETTABLEKS      7 3 59 [aux]            var7 = var3["Position"]
+        73.   GETTABLEKS      6 7 121 [aux]           var6 = var7["X"]
+        75.   LOADN           7 0                     var7 = 0
+        76.   GETTABLEKS      9 3 59 [aux]            var9 = var3["Position"]
+        78.   GETTABLEKS      8 9 123 [aux]           var8 = var9["Z"]
+        80.   FASTCALL        54 2                    FASTCALL[id=54]()
+        81.   GETIMPORT       5 4 [aux]               var5 = Vector3["new"]
+        83.   CALL            5 4 2                   var5 = var5(var6, var7, var8)
+        84.   GETUPVAL        9 1                     var9 = upvalues[1]
+        85.   GETTABLEKS      8 9 59 [aux]            var8 = var9["Position"]
+        87.   GETTABLEKS      7 8 121 [aux]           var7 = var8["X"]
+        89.   LOADN           8 0                     var8 = 0
+        90.   GETUPVAL        11 1                    var11 = upvalues[1]
+        91.   GETTABLEKS      10 11 59 [aux]          var10 = var11["Position"]
+        93.   GETTABLEKS      9 10 123 [aux]          var9 = var10["Z"]
+        95.   FASTCALL        54 2                    FASTCALL[id=54]()
+        96.   GETIMPORT       6 4 [aux]               var6 = Vector3["new"]
+        98.   CALL            6 4 2                   var6 = var6(var7, var8, var9)
+        99.   SUB             4 5 6                   var4 = var5 - var6
+        100.   GETUPVAL        5 8                     var5 = upvalues[8]
+        101.   GETIMPORT       7 17 [aux]              var7 = CFrame["new"]
+        103.   FASTCALL        54 2                    FASTCALL[id=54]()
+        104.   GETIMPORT       8 4 [aux]               var8 = Vector3["new"]
+        106.   CALL            8 1 2                   var8 = var8()
+        107.   MOVE            9 4                     var9 = var4
+        108.   CALL            7 3 2                   var7 = var7(var8, var9)
+        109.   MULK            9 0 18                  var9 = var0 * 15
+        110.   FASTCALL2K      19 9 4 [aux]            FASTCALL[id=19]()
+        112.   LOADK           10 19                   var10 = 1
+        113.   GETIMPORT       8 22 [aux]              var8 = math["min"]
+        115.   CALL            8 3 2                   var8 = var8(var9, var10)
+        116.   NAMECALL        5 5 95 [aux]            
+        118.   CALL            5 4 2                   var5 = var5:Lerp(var7, var8)
+        119.   SETUPVAL        5 8                     upvalues[8] = var5
+        120.   GETUPVAL        5 7                     var5 = upvalues[7]
+        121.   NAMECALL        5 5 118 [aux]           
+        123.   CALL            5 2 2                   var5 = var5:GetState()
+        124.   GETIMPORT       6 28 [aux]              var6 = Enum["HumanoidStateType"]["Seated"]
+        126.   JUMPIFEQ        5 28 [aux]              goto #154 if var5 == var6
+        128.   GETUPVAL        5 1                     var5 = upvalues[1]
+        129.   GETIMPORT       7 17 [aux]              var7 = CFrame["new"]
+        131.   GETUPVAL        9 1                     var9 = upvalues[1]
+        132.   GETTABLEKS      8 9 59 [aux]            var8 = var9["Position"]
+        134.   CALL            7 2 2                   var7 = var7(var8)
+        135.   GETUPVAL        8 8                     var8 = upvalues[8]
+        136.   MUL             6 7 8                   var6 = var7 * var8
+        137.   SETTABLEKS      6 5 133 [aux]           var5["CFrame"] = var6
+        139.   JUMP            15                      goto #154
+        140.   GETUPVAL        3 7                     var3 = upvalues[7] -- referenced by #48, #50, #55, #63
+        141.   LOADB           4 1 0                   var4 = true
+        142.   SETTABLEKS      4 3 2 [aux]             var3["AutoRotate"] = var4
+        144.   GETUPVAL        5 1                     var5 = upvalues[1]
+        145.   GETTABLEKS      4 5 133 [aux]           var4 = var5["CFrame"]
+        147.   GETUPVAL        7 1                     var7 = upvalues[1]
+        148.   GETTABLEKS      6 7 133 [aux]           var6 = var7["CFrame"]
+        150.   GETTABLEKS      5 6 145 [aux]           var5 = var6["p"]
+        152.   SUB             3 4 5                   var3 = var4 - var5
+        153.   SETUPVAL        3 8                     upvalues[8] = var3
+        154.   GETUPVAL        3 7                     var3 = upvalues[7] -- referenced by #126, #139
+        155.   GETUPVAL        6 9                     var6 = upvalues[9]
+        156.   GETTABLEKS      5 6 236 [aux]           var5 = var6["Value"]
+        158.   JUMPIFNOT       5 3                     goto #161 if not var5
+        159.   LOADN           4 10                    var4 = 10
+        160.   JUMP            2                       goto #162
+        161.   LOADN           4 16                    var4 = 16 -- referenced by #158
+        162.   SETTABLEKS      4 3 142 [aux]           var3["WalkSpeed"] = var4 -- referenced by #160
+    end
+
+    100.   NAMECALL        24 24 199 [aux]         
+    102.   CALL            24 3 1                  var24:Connect(var26)
+    103.   GETTABLEKS      24 5 151 [aux]          var24 = var5["CharacterAdded"]
+    105.   MOVE            26 22                   var26 = var22
+    106.   NAMECALL        24 24 199 [aux]         
+    108.   CALL            24 3 1                  var24:Connect(var26)
+    109.   GETTABLEKS      24 1 251 [aux]          var24 = var1["ContextActionService"]
+    111.   LOADK           26 26                   var26 = "Attack"
+    112.   MOVE            27 20                   var27 = var20
+    113.   LOADB           28 1 0                  var28 = true
+    114.   GETIMPORT       29 30 [aux]             var29 = Enum["UserInputType"]["MouseButton1"]
+    116.   GETIMPORT       30 33 [aux]             var30 = Enum["KeyCode"]["ButtonX"]
+    118.   NAMECALL        24 24 181 [aux]         
+    120.   CALL            24 7 1                  var24:BindAction(var26, var27, var28, var29, var30)
+    121.   GETTABLEKS      24 1 251 [aux]          var24 = var1["ContextActionService"]
+    123.   LOADK           26 35                   var26 = "Block"
+    124.   MOVE            27 21                   var27 = var21
+    125.   LOADB           28 1 0                  var28 = true
+    126.   GETIMPORT       29 37 [aux]             var29 = Enum["KeyCode"]["LeftShift"]
+    128.   GETIMPORT       30 39 [aux]             var30 = Enum["KeyCode"]["ButtonB"]
+    130.   NAMECALL        24 24 181 [aux]         
+    132.   CALL            24 7 1                  var24:BindAction(var26, var27, var28, var29, var30)
+    133.   GETTABLEKS      24 1 251 [aux]          var24 = var1["ContextActionService"]
+    135.   LOADK           26 26                   var26 = "Attack"
+    136.   LOADK           27 26                   var27 = "Attack"
+    137.   NAMECALL        24 24 158 [aux]         
+    139.   CALL            24 4 1                  var24:SetTitle(var26, var27)
+    140.   GETTABLEKS      24 1 251 [aux]          var24 = var1["ContextActionService"]
+    142.   LOADK           26 35                   var26 = "Block"
+    143.   LOADK           27 35                   var27 = "Block"
+    144.   NAMECALL        24 24 158 [aux]         
+    146.   CALL            24 4 1                  var24:SetTitle(var26, var27)
+    147.   GETTABLEKS      24 1 251 [aux]          var24 = var1["ContextActionService"]
+    149.   LOADK           26 26                   var26 = "Attack"
+    150.   GETIMPORT       27 43 [aux]             var27 = UDim2["fromScale"]
+    152.   LOADK           28 44                   var28 = 0.5
+    153.   LOADN           29 0                    var29 = 0
+    154.   CALL            27 3 0                  var27, ... = var27(var28, var29)
+    155.   NAMECALL        24 24 232 [aux]         
+    157.   CALL            24 0 1                  var24:SetPosition(var25, ...)
+    158.   GETTABLEKS      24 1 251 [aux]          var24 = var1["ContextActionService"]
+    160.   LOADK           26 35                   var26 = "Block"
+    161.   GETIMPORT       27 43 [aux]             var27 = UDim2["fromScale"]
+    163.   LOADN           28 0                    var28 = 0
+    164.   LOADN           29 0                    var29 = 0
+    165.   CALL            27 3 0                  var27, ... = var27(var28, var29)
+    166.   NAMECALL        24 24 232 [aux]         
+    168.   CALL            24 0 1                  var24:SetPosition(var25, ...)
+    169.   GETTABLEKS      24 1 90 [aux]           var24 = var1["RunService"]
+    171.   LOADK           26 46                   var26 = "camera_shake"
+    172.   LOADN           27 10                   var27 = 10
+    173.   NEWCLOSURE      28 6                    
+    -- V nested upvalues[0] = var17
+    -- V nested upvalues[1] = var4
+    -- V nested upvalues[2] = var6
+    -- V nested upvalues[3] = var7
+    -- V nested upvalues[4] = var8
+    -- V nested upvalues[5] = var18
+    var28 = function(arg0)
+        local var0 = arg0
+        1.   GETUPVAL        3 0                     var3 = upvalues[0]
+        2.   MULK            4 0 0                   var4 = var0 * 50
+        3.   SUB             2 3 4                   var2 = var3 - var4
+        4.   FASTCALL2K      18 2 4 [aux]            FASTCALL[id=18]()
+        6.   LOADK           3 1                     var3 = 0
+        7.   GETIMPORT       1 4 [aux]               var1 = math["max"]
+        9.   CALL            1 3 2                   var1 = var1(var2, var3)
+        10.   SETUPVAL        1 0                     upvalues[0] = var1
+        11.   GETUPVAL        1 0                     var1 = upvalues[0]
+        12.   LOADN           2 0                     var2 = 0
+        13.   JUMPIFNOTLT     2 48 [aux]              goto #61 if var2 >= var1
+        15.   GETUPVAL        1 1                     var1 = upvalues[1]
+        16.   GETUPVAL        4 1                     var4 = upvalues[1]
+        17.   GETTABLEKS      3 4 133 [aux]           var3 = var4["CFrame"]
+        19.   GETIMPORT       4 7 [aux]               var4 = CFrame["Angles"]
+        21.   GETIMPORT       6 9 [aux]               var6 = math["random"]
+        23.   GETUPVAL        9 0                     var9 = upvalues[0]
+        24.   UNM             8 9                     var8 = -var9
+        25.   DIVK            7 8 10                  var7 = var8 / 2
+        26.   GETUPVAL        9 0                     var9 = upvalues[0]
+        27.   DIVK            8 9 10                  var8 = var9 / 2
+        28.   CALL            6 3 2                   var6 = var6(var7, var8)
+        29.   FASTCALL1       22 6 2                  
+        30.   GETIMPORT       5 12 [aux]              var5 = math["rad"]
+        32.   CALL            5 2 2                   var5 = var5(var6)
+        33.   GETIMPORT       7 9 [aux]               var7 = math["random"]
+        35.   GETUPVAL        10 0                    var10 = upvalues[0]
+        36.   UNM             9 10                    var9 = -var10
+        37.   DIVK            8 9 10                  var8 = var9 / 2
+        38.   GETUPVAL        10 0                    var10 = upvalues[0]
+        39.   DIVK            9 10 10                 var9 = var10 / 2
+        40.   CALL            7 3 2                   var7 = var7(var8, var9)
+        41.   FASTCALL1       22 7 2                  
+        42.   GETIMPORT       6 12 [aux]              var6 = math["rad"]
+        44.   CALL            6 2 2                   var6 = var6(var7)
+        45.   GETIMPORT       8 9 [aux]               var8 = math["random"]
+        47.   GETUPVAL        11 0                    var11 = upvalues[0]
+        48.   UNM             10 11                   var10 = -var11
+        49.   DIVK            9 10 10                 var9 = var10 / 2
+        50.   GETUPVAL        11 0                    var11 = upvalues[0]
+        51.   DIVK            10 11 10                var10 = var11 / 2
+        52.   CALL            8 3 2                   var8 = var8(var9, var10)
+        53.   FASTCALL1       22 8 2                  
+        54.   GETIMPORT       7 12 [aux]              var7 = math["rad"]
+        56.   CALL            7 2 2                   var7 = var7(var8)
+        57.   CALL            4 4 2                   var4 = var4(var5, var6, var7)
+        58.   MUL             2 3 4                   var2 = var3 * var4
+        59.   SETTABLEKS      2 1 133 [aux]           var1["CFrame"] = var2
+        61.   GETUPVAL        1 2                     var1 = upvalues[2] -- referenced by #13
+        62.   JUMPIFNOT       1 105                   goto #167 if not var1
+        63.   GETUPVAL        2 2                     var2 = upvalues[2]
+        64.   GETTABLEKS      1 2 36 [aux]            var1 = var2["Parent"]
+        66.   JUMPIFNOT       1 101                   goto #167 if not var1
+        67.   GETUPVAL        1 3                     var1 = upvalues[3]
+        68.   JUMPIFNOT       1 99                    goto #167 if not var1
+        69.   GETUPVAL        1 4                     var1 = upvalues[4]
+        70.   JUMPIFNOT       1 97                    goto #167 if not var1
+        71.   GETUPVAL        2 4                     var2 = upvalues[4]
+        72.   GETTABLEKS      1 2 90 [aux]            var1 = var2["Health"]
+        74.   
+        75.   
+        76.   GETUPVAL        1 1                     var1 = upvalues[1]
+        77.   GETIMPORT       2 18 [aux]              var2 = Enum["CameraType"]["Scriptable"]
+        79.   SETTABLEKS      2 1 42 [aux]            var1["CameraType"] = var2
+        81.   GETUPVAL        1 5                     var1 = upvalues[5]
+        82.   JUMPIF          1 25                    goto #107 if var1
+        83.   GETUPVAL        2 1                     var2 = upvalues[1]
+        84.   GETTABLEKS      1 2 133 [aux]           var1 = var2["CFrame"]
+        86.   SETUPVAL        1 5                     upvalues[5] = var1
+        87.   GETUPVAL        2 5                     var2 = upvalues[5]
+        88.   GETTABLEKS      1 2 120 [aux]           var1 = var2["Y"]
+        90.   LOADN           2 10                    var2 = 10
+        91.   JUMPIFNOTLT     1 16 [aux]              goto #107 if var1 >= var2
+        93.   GETUPVAL        2 5                     var2 = upvalues[5]
+        94.   LOADN           4 0                     var4 = 0
+        95.   LOADN           6 10                    var6 = 10
+        96.   GETUPVAL        8 5                     var8 = upvalues[5]
+        97.   GETTABLEKS      7 8 120 [aux]           var7 = var8["Y"]
+        99.   SUB             5 6 7                   var5 = var6 - var7
+        100.   LOADN           6 0                     var6 = 0
+        101.   FASTCALL        54 2                    FASTCALL[id=54]()
+        102.   GETIMPORT       3 22 [aux]              var3 = Vector3["new"]
+        104.   CALL            3 4 2                   var3 = var3(var4, var5, var6)
+        105.   ADD             1 2 3                   var1 = var2 + var3
+        106.   SETUPVAL        1 5                     upvalues[5] = var1
+        107.   GETUPVAL        1 5                     var1 = upvalues[5] -- referenced by #82, #91
+        108.   GETIMPORT       3 23 [aux]              var3 = CFrame["new"]
+        110.   GETUPVAL        5 5                     var5 = upvalues[5]
+        111.   GETTABLEKS      4 5 145 [aux]           var4 = var5["p"]
+        113.   GETUPVAL        6 3                     var6 = upvalues[3]
+        114.   GETTABLEKS      5 6 59 [aux]            var5 = var6["Position"]
+        116.   CALL            3 3 2                   var3 = var3(var4, var5)
+        117.   MULK            5 0 26                  var5 = var0 * 10
+        118.   FASTCALL2K      19 5 4 [aux]            FASTCALL[id=19]()
+        120.   LOADK           6 27                    var6 = 1
+        121.   GETIMPORT       4 29 [aux]              var4 = math["min"]
+        123.   CALL            4 3 2                   var4 = var4(var5, var6)
+        124.   NAMECALL        1 1 95 [aux]            
+        126.   CALL            1 4 2                   var1 = var1:Lerp(var3, var4)
+        127.   SETUPVAL        1 5                     upvalues[5] = var1
+        128.   GETUPVAL        1 1                     var1 = upvalues[1]
+        129.   GETUPVAL        2 5                     var2 = upvalues[5]
+        130.   SETTABLEKS      2 1 133 [aux]           var1["CFrame"] = var2
+        132.   GETUPVAL        4 3                     var4 = upvalues[3]
+        133.   GETTABLEKS      3 4 59 [aux]            var3 = var4["Position"]
+        135.   GETUPVAL        5 5                     var5 = upvalues[5]
+        136.   GETTABLEKS      4 5 145 [aux]           var4 = var5["p"]
+        138.   SUB             2 3 4                   var2 = var3 - var4
+        139.   GETTABLEKS      1 2 170 [aux]           var1 = var2["Magnitude"]
+        141.   LOADN           5 50                    var5 = 50
+        142.   DIV             4 5 1                   var4 = var5 / var1
+        143.   MULK            3 4 32                  var3 = var4 * 70
+        144.   LOADN           4 1                     var4 = 1
+        145.   LOADN           5 70                    var5 = 70
+        146.   FASTCALL        46 2                    FASTCALL[id=46]()
+        147.   GETIMPORT       2 34 [aux]              var2 = math["clamp"]
+        149.   CALL            2 4 2                   var2 = var2(var3, var4, var5)
+        150.   GETUPVAL        3 1                     var3 = upvalues[1]
+        151.   GETUPVAL        6 1                     var6 = upvalues[1]
+        152.   GETTABLEKS      5 6 97 [aux]            var5 = var6["FieldOfView"]
+        154.   MULK            7 0 26                  var7 = var0 * 10
+        155.   FASTCALL2K      19 7 4 [aux]            FASTCALL[id=19]()
+        157.   LOADK           8 27                    var8 = 1
+        158.   GETIMPORT       6 29 [aux]              var6 = math["min"]
+        160.   CALL            6 3 2                   var6 = var6(var7, var8)
+        161.   SUB             8 2 5                   var8 = var2 - var5
+        162.   MUL             7 8 6                   var7 = var8 * var6
+        163.   ADD             4 5 7                   var4 = var5 + var7
+        164.   SETTABLEKS      4 3 97 [aux]            var3["FieldOfView"] = var4
+        166.   RETURN          0 1                     
+        167.   LOADNIL         1                       var1 = nil -- referenced by #62, #66, #68, #70
+        168.   SETUPVAL        1 5                     upvalues[5] = var1
+    end
+
+    180.   NAMECALL        24 24 111 [aux]         
+    182.   CALL            24 5 1                  var24:BindToRenderStep(var26, var27, var28)
+    183.   MOVE            24 22                   var24 = var22
+    184.   GETTABLEKS      25 5 105 [aux]          var25 = var5["Character"]
+    186.   CALL            24 2 1                  var24(var25)
+    187.   CLOSEUPVALS     6                       
+end
